@@ -25,7 +25,7 @@ elmo['maxlen'] = 50
 
 elmo['test_rate'] = 0.1
 elmo['val_rate'] = 0.1
-elmo["n_epochs"] = 10
+elmo["n_epochs"] = 20
 
 elmo['n_tags'] = 0
 
@@ -44,7 +44,7 @@ from sklearn.model_selection import train_test_split
 import tensorflow as tf
 import tensorflow_hub as hub
 from keras import backend as K
-from keras.models import Model, Input
+from keras.models import Model, Input, load_model
 from keras.layers.merge import add
 from keras.layers import LSTM, Embedding, Dense, TimeDistributed, Dropout, Bidirectional, Lambda
 from keras.preprocessing.sequence import pad_sequences
@@ -220,12 +220,13 @@ class ELMo(object):
         self.batch_size = elmo['batch_size']
 
         # load elmo model
-        self.elmo_net = self.get_elmo()
+        self.elmo_net = None
         if os.path.exists(config['elmo']['modelCheckpoint_file']):
-            self.elmo_net.load_weights(config['elmo']["modelCheckpoint_file"])
-            print('loading elmo model from file')
+            self.elmo_net = load_model(config['elmo']["modelCheckpoint_file"])
+            print('loading elmo model and weights from file')
             print("got elmo")
         else:
+            self.elmo_net = self.get_elmo()
             print('no elmo model file exists, creating model')
 
         # load have_trained_nb_epoch
@@ -279,7 +280,7 @@ class ELMo(object):
         save_crt_epoch_nb = Save_crt_epoch_nb(config['elmo']['have_trained_nb_epoch_file'])
         # save_records = Save_records(config['unet']['logges_file'], config['unet']['validate_loss_file'])
         checkpointer = ModelCheckpoint(filepath=config['elmo']['modelCheckpoint_file'],
-                                       verbose=1, save_best_only=False)
+                                       verbose=1, save_best_only=False, save_weights_only=False)
         tensorboard = TensorBoard(log_dir=config['elmo']['tensorboard_dir'])
 
         print('Fitting model...')

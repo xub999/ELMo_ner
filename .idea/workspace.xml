@@ -16,8 +16,8 @@
       <file leaf-file-name="ner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+            <state relative-caret-position="225">
+              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
               <folding>
                 <element signature="e#1057#1730#0" />
                 <element signature="e#1091#1537#0" />
@@ -37,8 +37,16 @@
                 <element signature="e#8238#8413#0" />
                 <element signature="e#8467#8657#0" />
                 <element signature="e#8691#9554#0" />
-                <element signature="e#9600#10808#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="callbacks.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/callbacks.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="392" column="56" selection-start-line="392" selection-start-column="39" selection-end-line="392" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -67,6 +75,7 @@
     <findStrings>
       <find>verbose</find>
       <find>have_trained_nb_epoch_file</find>
+      <find>checkpoint</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,13 +195,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/callbacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="187" column="8" selection-start-line="187" selection-start-column="8" selection-end-line="187" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/engine/training.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
@@ -207,10 +209,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/callbacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="392" column="56" selection-start-line="392" selection-start-column="39" selection-end-line="392" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        <state relative-caret-position="225">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
           <folding>
             <element signature="e#1057#1730#0" />
             <element signature="e#1091#1537#0" />
@@ -230,7 +239,6 @@
             <element signature="e#8238#8413#0" />
             <element signature="e#8467#8657#0" />
             <element signature="e#8691#9554#0" />
-            <element signature="e#9600#10808#0" />
           </folding>
         </state>
       </provider>
