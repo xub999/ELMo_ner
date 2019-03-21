@@ -9,10 +9,10 @@ config = dict()
 
 elmo = dict()
 
-elmo['data_path'] = "./data/ner_dataset.csv"
-elmo['modelCheckpoint_file'] = "./record/modelCheckpoint_file.cpt"
-elmo['have_trained_nb_epoch_file'] = "./record/have_trained_nb_epoch.dat"
-elmo['tensorboard_dir'] = "./record/tensorboard"
+elmo['data_path'] = "/content/ELMo_ner/data/ner_dataset.csv"
+elmo['modelCheckpoint_file'] = "/content/ELMo_ner/record/modelCheckpoint_file.cpt"
+elmo['have_trained_nb_epoch_file'] = "/content/ELMo_ner/record/have_trained_nb_epoch.dat"
+elmo['tensorboard_dir'] = "/content/ELMo_ner/record/tensorboard"
 
 elmo['batch_size'] = 32
 elmo['maxlen'] = 50
