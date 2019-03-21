@@ -277,7 +277,7 @@ class ELMo(object):
             generator=self.generator_data_train_fine(),
             steps_per_epoch=self.myData.total_nb_batch_train,
             epochs=self.epoches,
-            verbose=0,
+            verbose=1,
             # callbacks=[save_crt_epoch_nb, save_records, checkpointer, tensorboard],
             callbacks=[save_crt_epoch_nb, checkpointer, tensorboard],
             validation_data=self.generator_data_validate_fine(),
