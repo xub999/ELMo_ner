@@ -122,8 +122,8 @@ class Data(object):
         nb_train_data = self.X_tr.shape[0]
         random_index = np.linspace(0, nb_train_data - 1, nb_train_data, dtype=np.int32)
         random.shuffle(random_index)
-        self.X_tr = list(self.X_tr[random_index])
-        self.y_tr = list(self.y_tr[random_index])
+        self.X_tr = self.X_tr[random_index]
+        self.y_tr = self.y_tr[random_index]
 
     def next_batch_train(self):
         data_X_batch_train = self.X_tr[self.now_nb_batch_index_train*self.batch_size:(self.now_nb_batch_index_train+1)*self.batch_size]
