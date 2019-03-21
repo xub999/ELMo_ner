@@ -14,7 +14,7 @@ elmo['modelCheckpoint_file'] = "/content/ELMo_ner/record/modelCheckpoint_file.cp
 elmo['have_trained_nb_epoch_file'] = "/content/ELMo_ner/record/have_trained_nb_epoch.dat"
 elmo['tensorboard_dir'] = "/content/ELMo_ner/record/tensorboard"
 
-elmo['batch_size'] = 32
+elmo['batch_size'] = 64
 elmo['maxlen'] = 50
 
 elmo['test_rate'] = 0.1
