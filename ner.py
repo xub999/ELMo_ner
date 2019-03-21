@@ -68,7 +68,7 @@ class Data(object):
         test_split_rate = elmo["test_rate"]
         val_split_rate = elmo["val_rate"]
 
-        data = pd.read_csv(elmo['data_path'], encoding="latisn1")
+        data = pd.read_csv(elmo['data_path'], encoding="latin1")
         data = data.fillna(method="ffill")
 
         words = list(set(data["Word"].values))
