@@ -14,10 +14,11 @@ elmo['modelCheckpoint_file'] = "/content/ELMo_ner/record/modelCheckpoint_file.cp
 elmo['have_trained_nb_epoch_file'] = "/content/ELMo_ner/record/have_trained_nb_epoch.dat"
 elmo['tensorboard_dir'] = "/content/ELMo_ner/record/tensorboard"
 
-elmo['batch_size'] = 64
+elmo['batch_size'] = 96
 elmo['maxlen'] = 50
 
 elmo['test_rate'] = 0.1
+elmo['val_rate'] = 0.1
 elmo["n_epochs"] = 3
 
 elmo['n_tags'] = 0
@@ -65,8 +66,9 @@ class Data(object):
     def __init__(self):
         self.batch_size = elmo["batch_size"]
         test_split_rate = elmo["test_rate"]
+        val_split_rate = elmo["val_rate"]
 
-        data = pd.read_csv(elmo['data_path'], encoding="latin1")
+        data = pd.read_csv(elmo['data_path'], encoding="latisn1")
         data = data.fillna(method="ffill")
 
         words = list(set(data["Word"].values))
@@ -99,8 +101,9 @@ class Data(object):
         X_tr = np.array(X_tr)
         self.X_te = np.array(X_te)
 
-        self.X_tr, self.X_val = X_tr[:1213 * self.batch_size], X_tr[-135 * self.batch_size:]
-        y_tr, y_val = y_tr[:1213 * self.batch_size], y_tr[-135 * self.batch_size:]
+        self.X_tr, self.X_val, y_tr, y_val = train_test_split(X_tr, y_tr, test_size=val_split_rate, random_state=2018)
+        # self.X_tr, self.X_val = X_tr[:1213 * self.batch_size], X_tr[-135 * self.batch_size:]
+        # y_tr, y_val = y_tr[:1213 * self.batch_size], y_tr[-135 * self.batch_size:]
 
         self.y_tr = y_tr.reshape(y_tr.shape[0], y_tr.shape[1], 1)
         self.y_val = y_val.reshape(y_val.shape[0], y_val.shape[1], 1)
