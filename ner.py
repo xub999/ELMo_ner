@@ -2,6 +2,7 @@
 import glob
 
 """# config.py"""
+USE_google_drive = True
 
 import os
 
@@ -9,19 +10,27 @@ config = dict()
 
 elmo = dict()
 
-elmo['data_path'] = "/content/ELMo_ner/data/ner_dataset.csv"
-elmo['modelCheckpoint_file'] = "/content/ELMo_ner/record/modelCheckpoint_file.cpt"
-elmo['have_trained_nb_epoch_file'] = "/content/ELMo_ner/record/have_trained_nb_epoch.dat"
-elmo['tensorboard_dir'] = "/content/ELMo_ner/record/tensorboard"
+dir = "/content/ELMo_ner/"
+if USE_google_drive:
+    dir = "/content/drive/My Drive/ai-gg_drive/ner/ELMo_ner/"
+
+elmo['data_path'] = dir + "data/ner_dataset.csv"
+elmo['modelCheckpoint_file'] = dir + "record/modelCheckpoint_file.cpt"
+elmo['have_trained_nb_epoch_file'] = dir + "record/have_trained_nb_epoch.dat.npy"
+elmo['tensorboard_dir'] = dir + "record/tensorboard"
+
 
 elmo['batch_size'] = 128
 elmo['maxlen'] = 50
 
 elmo['test_rate'] = 0.1
 elmo['val_rate'] = 0.1
-elmo["n_epochs"] = 3
+elmo["n_epochs"] = 10
 
 elmo['n_tags'] = 0
+
+# for google drive
+
 
 config['elmo'] = elmo
 
@@ -67,20 +76,18 @@ class Data(object):
         self.batch_size = elmo["batch_size"]
         test_split_rate = elmo["test_rate"]
         val_split_rate = elmo["val_rate"]
+        max_len = elmo['maxlen']
 
         data = pd.read_csv(elmo['data_path'], encoding="latin1")
         data = data.fillna(method="ffill")
 
         words = list(set(data["Word"].values))
         words.append("ENDPAD")
-        n_words = len(words)
         tags = list(set(data["Tag"].values))
         elmo['n_tags'] = len(tags)
         getter = SentenceGetter(data)
-        sent = getter.get_next()
 
         sentences = getter.sentences
-        max_len = 50
         tag2idx = {t: i for i, t in enumerate(tags)}
         X = [[w[0] for w in s] for s in sentences]
         new_X = []
@@ -223,6 +230,7 @@ class ELMo(object):
 
         # load have_trained_nb_epoch
         if os.path.exists(config['elmo']['have_trained_nb_epoch_file']):
+            print("file not exist: " + config['elmo']['have_trained_nb_epoch_file'])
             self.have_trained_nb_epoch = np.load(config['elmo']['have_trained_nb_epoch_file']) + 1
         else:
             self.have_trained_nb_epoch = 0
