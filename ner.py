@@ -2,7 +2,7 @@
 import glob
 
 """# config.py"""
-# .
+
 import os
 
 config = dict()
@@ -96,6 +96,8 @@ class Data(object):
         y = pad_sequences(maxlen=max_len, sequences=y, padding="post", value=tag2idx["O"])
 
         X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=test_split_rate, random_state=2018)
+        X_tr = np.array(X_tr)
+        self.X_te = np.array(X_te)
 
         self.X_tr, self.X_val = X_tr[:1213 * self.batch_size], X_tr[-135 * self.batch_size:]
         y_tr, y_val = y_tr[:1213 * self.batch_size], y_tr[-135 * self.batch_size:]
@@ -106,6 +108,10 @@ class Data(object):
 
         # train paths shuffle
         self.shuffle_train_data()
+
+        self.X_tr = np.array(self.X_tr)
+        self.X_val = np.array(self.X_val)
+        print(type(self.X_tr))
 
         self.total_nb_batch_train = int(self.X_tr.shape[0] / self.batch_size)
         self.now_nb_batch_index_train = 0
@@ -128,7 +134,7 @@ class Data(object):
             self.now_nb_batch_index_train = 0
             self.shuffle_train_data()
 
-        return data_X_batch_train, data_y_batch_train
+        return np.array(data_X_batch_train), np.array(data_y_batch_train)
 
     def next_batch_validate(self):
         data_X_batch_validate = self.X_val[self.now_nb_batch_index_validate * self.batch_size:(self.now_nb_batch_index_validate + 1) * self.batch_size]
@@ -138,7 +144,7 @@ class Data(object):
         if self.now_nb_batch_index_validate == self.total_nb_batch_validate:
             self.now_nb_batch_index_validate = 0
 
-        return data_X_batch_validate, data_y_batch_validate
+        return np.array(data_X_batch_validate), np.array(data_y_batch_validate)
 
 
 """# model.py"""
@@ -295,4 +301,4 @@ if __name__ == '__main__':
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
     elmo_model = ELMo()
-    elmo_model.train_unet_generator()
+    elmo_model.train_elmo_generator()
