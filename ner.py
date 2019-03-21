@@ -247,7 +247,7 @@ class ELMo(object):
                    {'output': y_batch_validate})
 
     def get_elmo(self):
-        input_text = Input(shape=(elmo['maxlen'],), dtype=tf.string, name='input')
+        input_text = Input(shape=(elmo['maxlen'],), dtype='string', name='input')
         embedding = Lambda(ElmoEmbedding, output_shape=(elmo['maxlen'], 1024))(input_text)
         x = Bidirectional(LSTM(units=512, return_sequences=True,
                                recurrent_dropout=0.2, dropout=0.2))(embedding)
