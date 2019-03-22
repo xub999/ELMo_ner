@@ -3,6 +3,7 @@ import glob
 
 """# config.py"""
 USE_google_drive = True
+USE_checkpoint_model = False
 
 import os
 
@@ -19,6 +20,7 @@ elmo['modelCheckpoint_file'] = dir + "record/modelCheckpoint_file.cpt"
 elmo['have_trained_nb_epoch_file'] = dir + "record/have_trained_nb_epoch.dat.npy"
 elmo['tensorboard_dir'] = dir + "record/tensorboard"
 elmo['hub_model_file'] = dir + "record/hub_elmo_module"
+elmo['model_h5'] = dir + "record/keras_model.h5"
 
 
 elmo['batch_size'] = 128
@@ -171,6 +173,15 @@ class Save_crt_epoch_nb(Callback):
         np.save(self.filepath, np.array(epoch))
 
 
+class Save_model(Callback):
+    def __init__(self, filepath):
+        super(Save_model, self).__init__()
+        self.filepath = filepath
+
+    def on_epoch_end(self, epoch, logs=None):
+        self.model.save(self.filepath)
+
+
 class Save_records(Callback):
     def __init__(self, filepath, val_filepath):
         super(Save_records, self).__init__()
@@ -197,7 +208,6 @@ class Save_records(Callback):
 
 
 elmo_model = None
-
 if os.path.exists(elmo['hub_model_file']):
     elmo_model = hub.Module(elmo['hub_model_file'])
 else:
@@ -225,8 +235,9 @@ class ELMo(object):
 
         # load elmo model
         self.elmo_net = None
-        if os.path.exists(config['elmo']['modelCheckpoint_file']):
-            self.elmo_net = load_model(config['elmo']["modelCheckpoint_file"])
+        model_path = config['elmo']['modelCheckpoint_file'] if USE_checkpoint_model else config['elmo']['model_h5']
+        if os.path.exists():
+            self.elmo_net = load_model(model_path)
             print('loading elmo model and weights from file')
             print("got elmo")
         else:
@@ -282,6 +293,7 @@ class ELMo(object):
         elmo_net = self.elmo_net
 
         save_crt_epoch_nb = Save_crt_epoch_nb(config['elmo']['have_trained_nb_epoch_file'])
+        save_keras_model = Save_model(config['elmo']['model_h5'])
         # save_records = Save_records(config['unet']['logges_file'], config['unet']['validate_loss_file'])
         checkpointer = ModelCheckpoint(filepath=config['elmo']['modelCheckpoint_file'],
                                        verbose=1, save_best_only=False, save_weights_only=False)
@@ -295,7 +307,7 @@ class ELMo(object):
             epochs=self.epoches,
             verbose=1,
             # callbacks=[save_crt_epoch_nb, save_records, checkpointer, tensorboard],
-            callbacks=[save_crt_epoch_nb, checkpointer, tensorboard],
+            callbacks=[save_crt_epoch_nb, checkpointer, tensorboard, save_keras_model],
             validation_data=self.generator_data_validate_fine(),
             validation_steps=self.myData.total_nb_batch_validate,
             class_weight=None,

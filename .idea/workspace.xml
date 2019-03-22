@@ -16,25 +16,34 @@
       <file leaf-file-name="ner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="319" column="40" lean-forward="true" selection-start-line="319" selection-start-column="40" selection-end-line="319" selection-end-column="40" />
+            <state relative-caret-position="500">
+              <caret line="238" column="28" lean-forward="true" selection-start-line="238" selection-start-column="28" selection-end-line="238" selection-end-column="28" />
               <folding>
                 <element signature="e#1057#1730#0" />
                 <element signature="e#1091#1537#0" />
                 <element signature="e#1571#1730#0" />
+                <element signature="e#1757#5286#0" />
                 <element signature="e#2450#2667#0" />
                 <element signature="e#3866#4113#0" />
                 <element signature="e#4167#4704#0" />
                 <element signature="e#4749#5298#0" />
                 <element signature="e#5461#5668#0" />
                 <element signature="e#5499#5573#0" />
-                <element signature="e#5629#5668#0" />
-                <element signature="e#5705#6500#0" />
+                <element signature="e#5935#6147#1" />
                 <element signature="e#7872#7997#0" />
                 <element signature="e#8047#8187#0" />
                 <element signature="e#8238#8413#0" />
                 <element signature="e#8467#8657#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="callbacks.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/callbacks.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="176" column="18" selection-start-line="176" selection-start-column="13" selection-end-line="176" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -258,22 +267,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/callbacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="176" column="18" selection-start-line="176" selection-start-column="13" selection-end-line="176" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="319" column="40" lean-forward="true" selection-start-line="319" selection-start-column="40" selection-end-line="319" selection-end-column="40" />
+        <state relative-caret-position="500">
+          <caret line="238" column="28" lean-forward="true" selection-start-line="238" selection-start-column="28" selection-end-line="238" selection-end-column="28" />
           <folding>
             <element signature="e#1057#1730#0" />
             <element signature="e#1091#1537#0" />
             <element signature="e#1571#1730#0" />
+            <element signature="e#1757#5286#0" />
             <element signature="e#2450#2667#0" />
             <element signature="e#3866#4113#0" />
             <element signature="e#4167#4704#0" />
             <element signature="e#4749#5298#0" />
             <element signature="e#5461#5668#0" />
             <element signature="e#5499#5573#0" />
-            <element signature="e#5629#5668#0" />
-            <element signature="e#5705#6500#0" />
+            <element signature="e#5935#6147#1" />
             <element signature="e#7872#7997#0" />
             <element signature="e#8047#8187#0" />
             <element signature="e#8238#8413#0" />
