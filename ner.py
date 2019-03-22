@@ -122,7 +122,6 @@ class Data(object):
 
         self.X_tr = np.array(self.X_tr)
         self.X_val = np.array(self.X_val)
-        print(type(self.X_tr))
 
         self.total_nb_batch_train = int(self.X_tr.shape[0] / self.batch_size)
         self.now_nb_batch_index_train = 0
@@ -198,16 +197,15 @@ class Save_records(Callback):
 
 
 elmo_model = None
-sess = tf.Session()
-K.set_session(sess)
+
 if os.path.exists(elmo['hub_model_file']):
     elmo_model = hub.Module(elmo['hub_model_file'])
 else:
     elmo_model = hub.Module("https://tfhub.dev/google/elmo/2", trainable=True)
-sess.run(tf.global_variables_initializer())
-sess.run(tf.tables_initializer())
-if not os.path.exists(elmo['hub_model_file']):
-    elmo_model.export(elmo['hub_model_file'], sess)
+    with tf.Session() as sess:
+        sess.run(tf.global_variables_initializer())
+        sess.run(tf.tables_initializer())
+        elmo_model.export(elmo['hub_model_file'], sess)
 
 
 def ElmoEmbedding(x):
