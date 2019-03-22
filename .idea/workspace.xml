@@ -16,8 +16,8 @@
       <file leaf-file-name="ner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="188" column="51" lean-forward="true" selection-start-line="188" selection-start-column="51" selection-end-line="188" selection-end-column="51" />
+            <state relative-caret-position="575">
+              <caret line="286" column="87" lean-forward="true" selection-start-line="286" selection-start-column="87" selection-end-line="286" selection-end-column="87" />
               <folding>
                 <element signature="e#1057#1730#0" />
                 <element signature="e#1091#1537#0" />
@@ -114,6 +114,7 @@
       <find>keras</find>
       <find>USE_checkpoint_model</find>
       <find>modelCheckpoint_file</find>
+      <find>USE_model_graph</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -323,8 +324,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="188" column="51" lean-forward="true" selection-start-line="188" selection-start-column="51" selection-end-line="188" selection-end-column="51" />
+        <state relative-caret-position="575">
+          <caret line="286" column="87" lean-forward="true" selection-start-line="286" selection-start-column="87" selection-end-line="286" selection-end-column="87" />
           <folding>
             <element signature="e#1057#1730#0" />
             <element signature="e#1091#1537#0" />
