@@ -20,7 +20,7 @@ elmo['modelCheckpoint_file'] = dir + "record/modelCheckpoint_file.cpt"
 elmo['have_trained_nb_epoch_file'] = dir + "record/have_trained_nb_epoch.dat.npy"
 elmo['tensorboard_dir'] = dir + "record/tensorboard"
 elmo['hub_model_file'] = dir + "record/hub_elmo_module"
-elmo['model_h5'] = dir + "record/keras_model.h5"
+elmo['model_h5'] = dir + "record/keras_model/"
 
 elmo['batch_size'] = 96
 elmo['maxlen'] = 50
