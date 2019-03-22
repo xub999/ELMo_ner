@@ -16,14 +16,12 @@
       <file leaf-file-name="ner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="214" column="38" selection-start-line="214" selection-start-column="38" selection-end-line="214" selection-end-column="38" />
+            <state relative-caret-position="415">
+              <caret line="115" column="51" lean-forward="true" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
               <folding>
                 <element signature="e#1057#1730#0" />
                 <element signature="e#1091#1537#0" />
                 <element signature="e#1571#1730#0" />
-                <element signature="e#1757#5286#0" />
-                <element signature="e#1785#3822#0" />
                 <element signature="e#2450#2667#0" />
                 <element signature="e#3866#4113#0" />
                 <element signature="e#4167#4704#0" />
@@ -324,14 +322,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="214" column="38" selection-start-line="214" selection-start-column="38" selection-end-line="214" selection-end-column="38" />
+        <state relative-caret-position="415">
+          <caret line="115" column="51" lean-forward="true" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
           <folding>
             <element signature="e#1057#1730#0" />
             <element signature="e#1091#1537#0" />
             <element signature="e#1571#1730#0" />
-            <element signature="e#1757#5286#0" />
-            <element signature="e#1785#3822#0" />
             <element signature="e#2450#2667#0" />
             <element signature="e#3866#4113#0" />
             <element signature="e#4167#4704#0" />

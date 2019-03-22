@@ -113,6 +113,10 @@ class Data(object):
         self.X_tr, self.X_val, y_tr, y_val = train_test_split(X_tr, y_tr, test_size=val_split_rate, random_state=2018)
         # self.X_tr, self.X_val = X_tr[:1213 * self.batch_size], X_tr[-135 * self.batch_size:]
         # y_tr, y_val = y_tr[:1213 * self.batch_size], y_tr[-135 * self.batch_size:]
+        self.X_tr = self.X_tr[:4 * self.batch_size]
+        self.X_val = self.X_val[-4 * self.batch_size:]
+        self.y_tr = self.y_tr[:4 * self.batch_size]
+        self.y_val = self.y_val[-4 * self.batch_size:]
 
         self.y_tr = y_tr.reshape(y_tr.shape[0], y_tr.shape[1], 1)
         self.y_val = y_val.reshape(y_val.shape[0], y_val.shape[1], 1)
@@ -290,7 +294,7 @@ class ELMo(object):
             epochs=self.epoches,
             verbose=1,
             # callbacks=[save_crt_epoch_nb, checkpointer, tensorboard],
-            callbacks=[save_crt_epoch_nb, checkpointer, tensorboard, save_keras_model],
+            callbacks=[save_crt_epoch_nb, tensorboard, save_keras_model],
             validation_data=self.generator_data_validate_fine(),
             validation_steps=self.myData.total_nb_batch_validate,
             class_weight=None,
