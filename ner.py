@@ -38,7 +38,6 @@ elmo['n_tags'] = 0
 config['elmo'] = elmo
 
 """# Data.py"""
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -46,6 +45,7 @@ plt.style.use("ggplot")
 from sklearn.model_selection import train_test_split
 import tensorflow as tf
 import tensorflow_hub as hub
+import tensorflow.keras as keras
 from keras import backend as K
 from keras.models import Model, Input, load_model
 from keras.layers.merge import add

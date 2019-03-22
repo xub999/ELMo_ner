@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebde4758-1e2d-4649-bbb8-e796416e3ae7" name="Default" comment="" />
+    <list default="true" id="ebde4758-1e2d-4649-bbb8-e796416e3ae7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/ner.py" beforeDir="false" afterPath="$PROJECT_DIR$/ner.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,13 +16,14 @@
       <file leaf-file-name="ner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="238" column="38" lean-forward="true" selection-start-line="238" selection-start-column="38" selection-end-line="238" selection-end-column="38" />
+            <state relative-caret-position="350">
+              <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
               <folding>
                 <element signature="e#1057#1730#0" />
                 <element signature="e#1091#1537#0" />
                 <element signature="e#1571#1730#0" />
                 <element signature="e#1757#5286#0" />
+                <element signature="e#1785#3822#0" />
                 <element signature="e#2450#2667#0" />
                 <element signature="e#3866#4113#0" />
                 <element signature="e#4167#4704#0" />
@@ -274,13 +277,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="238" column="38" lean-forward="true" selection-start-line="238" selection-start-column="38" selection-end-line="238" selection-end-column="38" />
+        <state relative-caret-position="350">
+          <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
           <folding>
             <element signature="e#1057#1730#0" />
             <element signature="e#1091#1537#0" />
             <element signature="e#1571#1730#0" />
             <element signature="e#1757#5286#0" />
+            <element signature="e#1785#3822#0" />
             <element signature="e#2450#2667#0" />
             <element signature="e#3866#4113#0" />
             <element signature="e#4167#4704#0" />
