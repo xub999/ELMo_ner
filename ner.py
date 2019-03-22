@@ -23,7 +23,7 @@ elmo['hub_model_file'] = dir + "record/hub_elmo_module"
 elmo['model_h5'] = dir + "record/keras_model.h5"
 
 
-elmo['batch_size'] = 128
+elmo['batch_size'] = 96
 elmo['maxlen'] = 50
 
 elmo['test_rate'] = 0.1
