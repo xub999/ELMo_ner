@@ -172,13 +172,13 @@ class Save_crt_epoch_nb(Callback):
         np.save(self.filepath, np.array(epoch))
 
 
-class Save_model(Callback):
+class Save_keras_model(Callback):
     def __init__(self, filepath):
-        super(Save_model, self).__init__()
+        super(Save_keras_model, self).__init__()
         self.filepath = filepath
 
     def on_epoch_end(self, epoch, logs=None):
-        self.model.save(self.filepath)
+        tf.contrib.saved_model.save_keras_model(self.model, self.filepath)
 
 
 elmo_model = None
@@ -212,8 +212,12 @@ class ELMo(object):
         self.elmo_net = self.get_elmo()
         model_path = config['elmo']['modelCheckpoint_file'] if USE_checkpoint_model else config['elmo']['model_h5']
         if os.path.exists(model_path):
-            # self.elmo_net = load_model(model_path)
-            self.elmo_net.load_weights(model_path)
+            if USE_checkpoint_model:
+                # self.elmo_net = load_model(model_path)
+                self.elmo_net.load_weights(model_path)
+            else:
+                self.elmo_net = tf.contrib.saved_model.load_keras_model(elmo['model_h5'])
+                self.elmo_net.summary()
 
             print('loading elmo model and weights from file')
             print("got elmo")
@@ -271,7 +275,7 @@ class ELMo(object):
         elmo_net = self.elmo_net
 
         save_crt_epoch_nb = Save_crt_epoch_nb(config['elmo']['have_trained_nb_epoch_file'])
-        save_keras_model = Save_model(config['elmo']['model_h5'])
+        save_keras_model = Save_keras_model(config['elmo']['model_h5'])
         checkpointer = ModelCheckpoint(filepath=config['elmo']['modelCheckpoint_file'],
                                        verbose=1, save_best_only=False, save_weights_only=False)
         tensorboard = TensorBoard(log_dir=config['elmo']['tensorboard_dir'])
