@@ -206,7 +206,8 @@ else:
     elmo_model = hub.Module("https://tfhub.dev/google/elmo/2", trainable=True)
 sess.run(tf.global_variables_initializer())
 sess.run(tf.tables_initializer())
-elmo_model.export(elmo['hub_model_file'], sess)
+if not os.path.exists(elmo['hub_model_file']):
+    elmo_model.export(elmo['hub_model_file'], sess)
 
 
 def ElmoEmbedding(x):
