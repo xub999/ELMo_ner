@@ -223,6 +223,7 @@ class ELMo(object):
             print("got elmo")
         else:
             # self.elmo_net = self.get_elmo()
+            self.elmo_net.summary()
             print('no elmo model file exists, creating model')
 
         # load have_trained_nb_epoch
