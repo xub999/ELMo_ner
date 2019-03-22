@@ -212,6 +212,7 @@ class ELMo(object):
         self.elmo_net = self.get_elmo()
         model_path = config['elmo']['modelCheckpoint_file'] if USE_checkpoint_model else config['elmo']['model_h5']
         if os.path.exists(model_path):
+            print(model_path + "exists")
             if USE_checkpoint_model:
                 # self.elmo_net = load_model(model_path)
                 self.elmo_net.load_weights(model_path)
