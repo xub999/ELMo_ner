@@ -235,20 +235,23 @@ class ELMo(object):
 
         # load elmo model
         self.elmo_net = None
+        self.elmo_net = self.get_elmo()
         model_path = config['elmo']['modelCheckpoint_file'] if USE_checkpoint_model else config['elmo']['model_h5']
         if os.path.exists(model_path):
-            self.elmo_net = load_model(model_path)
+            # self.elmo_net = load_model(model_path)
+            self.elmo_net.load_weights(model_path)
             print('loading elmo model and weights from file')
             print("got elmo")
         else:
-            self.elmo_net = self.get_elmo()
+            # self.elmo_net = self.get_elmo()
             print('no elmo model file exists, creating model')
 
         # load have_trained_nb_epoch
         if os.path.exists(config['elmo']['have_trained_nb_epoch_file']):
-            print("file not exist: " + config['elmo']['have_trained_nb_epoch_file'])
             self.have_trained_nb_epoch = np.load(config['elmo']['have_trained_nb_epoch_file']) + 1
+            print("loaded have_trained_nb_epoch")
         else:
+            print("file not exist: " + config['elmo']['have_trained_nb_epoch_file'])
             self.have_trained_nb_epoch = 0
 
     def next_batch_data_train(self):
