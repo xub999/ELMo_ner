@@ -3,7 +3,7 @@ import glob
 
 """# config.py"""
 USE_google_drive = True
-USE_checkpoint_model = False
+USE_checkpoint_model = True
 
 import os
 
@@ -202,7 +202,8 @@ def ElmoEmbedding(x):
         "sequence_len": tf.constant(elmo['batch_size'] * [elmo['maxlen']])
     },
         signature="tokens",
-        as_dict=True)["elmo"]
+        as_dict=True, 
+        name="elmo_model_lambda")["elmo"]
 
 
 class ELMo(object):
@@ -218,8 +219,8 @@ class ELMo(object):
         if os.path.exists(model_path):
             print(model_path + "exists")
             if USE_checkpoint_model:
-                # self.elmo_net = load_model(model_path)
-                self.elmo_net.load_weights(model_path)
+                self.elmo_net = load_model(model_path)
+                # self.elmo_net.load_weights(model_path)
             else:
                 self.elmo_net = tf.contrib.saved_model.load_keras_model(elmo['model_h5'])
                 self.elmo_net.summary()
@@ -294,7 +295,7 @@ class ELMo(object):
             epochs=self.epoches,
             verbose=1,
             # callbacks=[save_crt_epoch_nb, checkpointer, tensorboard],
-            callbacks=[save_crt_epoch_nb, tensorboard, save_keras_model],
+            callbacks=[save_crt_epoch_nb, checkpointer, tensorboard],
             validation_data=self.generator_data_validate_fine(),
             validation_steps=self.myData.total_nb_batch_validate,
             class_weight=None,
