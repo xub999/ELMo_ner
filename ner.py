@@ -186,7 +186,7 @@ class Save_model(Callback):
 
 class Save_model_by_graph(Callback):
     def __init__(self, filepath):
-        super(Save_model, self).__init__()
+        super(Save_model_by_graph, self).__init__()
         self.filepath = filepath
 
     def on_epoch_end(self, epoch, logs=None):
