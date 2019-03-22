@@ -17,8 +17,8 @@
       <file leaf-file-name="ner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            <state relative-caret-position="306">
+              <caret line="226" column="13" lean-forward="true" selection-start-line="226" selection-start-column="13" selection-end-line="226" selection-end-column="13" />
               <folding>
                 <element signature="e#1057#1730#0" />
                 <element signature="e#1091#1537#0" />
@@ -31,8 +31,6 @@
                 <element signature="e#4749#5298#0" />
                 <element signature="e#5461#5668#0" />
                 <element signature="e#5499#5573#0" />
-                <element signature="e#5705#6500#0" />
-                <element signature="e#5935#6147#1" />
                 <element signature="e#7872#7997#0" />
                 <element signature="e#8047#8187#0" />
                 <element signature="e#8238#8413#0" />
@@ -116,6 +114,7 @@
       <find>print</find>
       <find>keras</find>
       <find>USE_checkpoint_model</find>
+      <find>modelCheckpoint_file</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,7 +186,21 @@
       <option name="project" value="LOCAL" />
       <updated>1553235948314</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[mod]add from_graph, to_graph">
+      <created>1553237072242</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1553237072242</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[mod]add log">
+      <created>1553238257399</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1553238257399</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -255,7 +268,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[mod]change to load_weights" />
-    <option name="LAST_COMMIT_MESSAGE" value="[mod]change to load_weights" />
+    <MESSAGE value="[mod]add from_graph, to_graph" />
+    <MESSAGE value="[mod]add log" />
+    <option name="LAST_COMMIT_MESSAGE" value="[mod]add log" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/engine/training.py">
@@ -309,8 +324,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        <state relative-caret-position="306">
+          <caret line="226" column="13" lean-forward="true" selection-start-line="226" selection-start-column="13" selection-end-line="226" selection-end-column="13" />
           <folding>
             <element signature="e#1057#1730#0" />
             <element signature="e#1091#1537#0" />
@@ -323,8 +338,6 @@
             <element signature="e#4749#5298#0" />
             <element signature="e#5461#5668#0" />
             <element signature="e#5499#5573#0" />
-            <element signature="e#5705#6500#0" />
-            <element signature="e#5935#6147#1" />
             <element signature="e#7872#7997#0" />
             <element signature="e#8047#8187#0" />
             <element signature="e#8238#8413#0" />

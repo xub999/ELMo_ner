@@ -225,12 +225,14 @@ class ELMo(object):
         if USE_model_graph:
             model_path = config['elmo']['model_graph']
         else:
+            print("not use model graph")
             model_path = config['elmo']['modelCheckpoint_file'] if USE_checkpoint_model else config['elmo']['model_h5']
         if os.path.exists(model_path):
             if USE_model_graph:
                 print("use model graph")
                 self.elmo_net.from_graph(model_path)
             else:
+
                 # self.elmo_net = load_model(model_path)
                 self.elmo_net.load_weights(model_path)
 
