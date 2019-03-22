@@ -202,8 +202,7 @@ def ElmoEmbedding(x):
         "sequence_len": tf.constant(elmo['batch_size'] * [elmo['maxlen']])
     },
         signature="tokens",
-        as_dict=True, 
-        name="elmo_model_lambda")["elmo"]
+        as_dict=True)["elmo"]
 
 
 class ELMo(object):

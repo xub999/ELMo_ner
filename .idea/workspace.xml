@@ -16,8 +16,8 @@
       <file leaf-file-name="ner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="204" column="22" lean-forward="true" selection-start-line="204" selection-start-column="22" selection-end-line="204" selection-end-column="22" />
+            <state relative-caret-position="115">
+              <caret line="204" column="29" lean-forward="true" selection-start-line="204" selection-start-column="29" selection-end-line="204" selection-end-column="29" />
               <folding>
                 <element signature="e#1057#1730#0" />
                 <element signature="e#1091#1537#0" />
@@ -339,8 +339,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="204" column="22" lean-forward="true" selection-start-line="204" selection-start-column="22" selection-end-line="204" selection-end-column="22" />
+        <state relative-caret-position="115">
+          <caret line="204" column="29" lean-forward="true" selection-start-line="204" selection-start-column="29" selection-end-line="204" selection-end-column="29" />
           <folding>
             <element signature="e#1057#1730#0" />
             <element signature="e#1091#1537#0" />
