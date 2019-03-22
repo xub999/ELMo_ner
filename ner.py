@@ -18,6 +18,7 @@ elmo['data_path'] = dir + "data/ner_dataset.csv"
 elmo['modelCheckpoint_file'] = dir + "record/modelCheckpoint_file.cpt"
 elmo['have_trained_nb_epoch_file'] = dir + "record/have_trained_nb_epoch.dat.npy"
 elmo['tensorboard_dir'] = dir + "record/tensorboard"
+elmo['hub_model_file'] = dir + "record/hub_elmo_module"
 
 
 elmo['batch_size'] = 128
@@ -196,12 +197,16 @@ class Save_records(Callback):
         print()
 
 
+elmo_model = None
 sess = tf.Session()
 K.set_session(sess)
-
-elmo_model = hub.Module("https://tfhub.dev/google/elmo/2", trainable=True)
+if os.path.exists(elmo['hub_model_file']):
+    elmo_model = hub.Module(elmo['hub_model_file'])
+else:
+    elmo_model = hub.Module("https://tfhub.dev/google/elmo/2", trainable=True)
 sess.run(tf.global_variables_initializer())
 sess.run(tf.tables_initializer())
+elmo_model.export(elmo['hub_model_file'], sess)
 
 
 def ElmoEmbedding(x):
