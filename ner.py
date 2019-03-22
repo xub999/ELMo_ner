@@ -316,5 +316,5 @@ if __name__ == '__main__':
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
-    elmo_model = ELMo()
-    elmo_model.train_elmo_generator()
+    my_elmo_model = ELMo()
+    my_elmo_model.train_elmo_generator()
