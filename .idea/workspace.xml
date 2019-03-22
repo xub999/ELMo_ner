@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebde4758-1e2d-4649-bbb8-e796416e3ae7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ner.py" beforeDir="false" afterPath="$PROJECT_DIR$/ner.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +17,8 @@
       <file leaf-file-name="ner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+            <state relative-caret-position="150">
+              <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
               <folding>
                 <element signature="e#1057#1730#0" />
                 <element signature="e#1091#1537#0" />
@@ -30,6 +31,7 @@
                 <element signature="e#4749#5298#0" />
                 <element signature="e#5461#5668#0" />
                 <element signature="e#5499#5573#0" />
+                <element signature="e#5705#6500#0" />
                 <element signature="e#5935#6147#1" />
                 <element signature="e#7872#7997#0" />
                 <element signature="e#8047#8187#0" />
@@ -113,6 +115,7 @@
       <find>export</find>
       <find>print</find>
       <find>keras</find>
+      <find>USE_checkpoint_model</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,7 +128,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="82" />
     <option name="y" value="2" />
     <option name="width" value="976" />
@@ -177,6 +180,14 @@
       <option name="presentableId" value="Default" />
       <updated>1553155451821</updated>
     </task>
+    <task id="LOCAL-00001" summary="[mod]change to load_weights">
+      <created>1553235948314</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553235948314</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -242,6 +253,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[mod]change to load_weights" />
+    <option name="LAST_COMMIT_MESSAGE" value="[mod]change to load_weights" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/engine/training.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -294,8 +309,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        <state relative-caret-position="150">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
           <folding>
             <element signature="e#1057#1730#0" />
             <element signature="e#1091#1537#0" />
@@ -308,6 +323,7 @@
             <element signature="e#4749#5298#0" />
             <element signature="e#5461#5668#0" />
             <element signature="e#5499#5573#0" />
+            <element signature="e#5705#6500#0" />
             <element signature="e#5935#6147#1" />
             <element signature="e#7872#7997#0" />
             <element signature="e#8047#8187#0" />
