@@ -193,31 +193,6 @@ class Save_model_by_graph(Callback):
         self.model.to_graph(self.filepath)
 
 
-class Save_records(Callback):
-    def __init__(self, filepath, val_filepath):
-        super(Save_records, self).__init__()
-        self.filepath = filepath
-        self.val_filepath = val_filepath
-        # self.t_logs = t_logs
-        # self.v_logs = v_logs
-
-    '''
-    def on_batch_end(self, batch, logs=None):
-        print('\t\t\tbatch %d:\tloss: %.5f\tdice: %.4f' %
-              (logs['batch'], logs['loss'],
-               logs['dice_coef_except_background']))
-    '''
-
-    def on_epoch_end(self, epoch, logs=None):
-        print('epoch %d:\tloss: %.5f\t6_dice: %.4f' %
-              (epoch, logs['loss'],
-               logs['dice_coef_except_background']))
-        print('\t\t\tval_loss: %.5f\tval_6_dice: %.4f' %
-              (logs['val_loss'],
-               logs['val_dice_coef_except_background']))
-        print()
-
-
 elmo_model = None
 if os.path.exists(elmo['hub_model_file']):
     elmo_model = hub.Module(elmo['hub_model_file'])
@@ -231,11 +206,11 @@ else:
 
 def ElmoEmbedding(x):
     return elmo_model(inputs={
-                            "tokens": tf.squeeze(tf.cast(x, tf.string)),
-                            "sequence_len": tf.constant(elmo['batch_size']*[elmo['maxlen']])
-                      },
-                      signature="tokens",
-                      as_dict=True)["elmo"]
+        "tokens": tf.squeeze(tf.cast(x, tf.string)),
+        "sequence_len": tf.constant(elmo['batch_size'] * [elmo['maxlen']])
+    },
+        signature="tokens",
+        as_dict=True)["elmo"]
 
 
 class ELMo(object):
@@ -253,6 +228,7 @@ class ELMo(object):
             model_path = config['elmo']['modelCheckpoint_file'] if USE_checkpoint_model else config['elmo']['model_h5']
         if os.path.exists(model_path):
             if USE_model_graph:
+                print("use model graph")
                 self.elmo_net.from_graph(model_path)
             else:
                 # self.elmo_net = load_model(model_path)
@@ -316,7 +292,6 @@ class ELMo(object):
         save_crt_epoch_nb = Save_crt_epoch_nb(config['elmo']['have_trained_nb_epoch_file'])
         save_keras_model = Save_model(config['elmo']['model_h5'])
         save_keras_model_graph = Save_model_by_graph(config['elmo']['model_graph'])
-        # save_records = Save_records(config['unet']['logges_file'], config['unet']['validate_loss_file'])
         checkpointer = ModelCheckpoint(filepath=config['elmo']['modelCheckpoint_file'],
                                        verbose=1, save_best_only=False, save_weights_only=False)
         tensorboard = TensorBoard(log_dir=config['elmo']['tensorboard_dir'])
@@ -328,7 +303,7 @@ class ELMo(object):
             steps_per_epoch=self.myData.total_nb_batch_train,
             epochs=self.epoches,
             verbose=1,
-            # callbacks=[save_crt_epoch_nb, save_records, checkpointer, tensorboard],
+            # callbacks=[save_crt_epoch_nb, checkpointer, tensorboard],
             callbacks=[save_crt_epoch_nb, checkpointer, tensorboard, save_keras_model, save_keras_model_graph],
             validation_data=self.generator_data_validate_fine(),
             validation_steps=self.myData.total_nb_batch_validate,
