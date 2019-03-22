@@ -218,7 +218,7 @@ class ELMo(object):
         if os.path.exists(model_path):
             print(model_path + "exists")
             if USE_checkpoint_model:
-                self.elmo_net = load_model(model_path)
+                self.elmo_net = load_model(model_path, custom_objects={'elmo_mode': elmo_model})
                 # self.elmo_net.load_weights(model_path)
             else:
                 self.elmo_net = tf.contrib.saved_model.load_keras_model(elmo['model_h5'])
