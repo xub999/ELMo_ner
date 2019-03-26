@@ -476,6 +476,11 @@ class ELMo(object):
         model = self.get_elmo()
         plot_model(model, to_file='model.png')
 
+    def predict(self, X):
+        y_pred = np.argmax(np.asarray(self.elmo_net.predict(X, batch_size=elmo['batch_size'], verbose=1)),
+                           -1)  # (None, 50)
+        return y_pred
+
 
 class ELMo_test():
     def __init__(self):
@@ -503,16 +508,29 @@ nltk.download('punkt')
 
 
 def predict_one_sample(elmo_model_test, raw_x_str):
-    x_tokens = np.array(word_tokenize(raw_x_str))
-    x_tokens = np.array([x_tokens])
-    words_num = x_tokens.shape[0]
+    x_tokens = [word_tokenize(raw_x_str)]
+    words_num = len(x_tokens[0])
 
-    x_processd = process_input(x_tokens)
-    y_pred = elmo_model_test.predict(x_processd)
+    x_processed = process_input(x_tokens)
+    y_pred = elmo_model_test.predict(x_processed)
 
-    print_one_sample_and_result(x_processd[0][:words_num], y_pred[0][:words_num])
+    # print_one_sample_and_result(x_processed[0][:words_num], y_pred[0][:words_num])
+    new_y_pred = [y_pred[0][:words_num]]
+    return x_tokens, new_y_pred
 
-    return y_pred[0][:words_num]
+
+def predict_samples(elmo_model_test, raw_samples_str):
+    # raw_samples_str: ["", "", ""]
+    samples_token = [word_tokenize(raw_x_str) for raw_x_str in raw_samples_str]  # [['', '', ''],[],[]]
+    words_num = [len(sample_token) for sample_token in samples_token]
+    samples_num = len(raw_samples_str)
+
+    x_processed = process_input(samples_token)
+    y_pred = elmo_model_test.predict(x_processed)
+
+    new_y_pred = [y_pred[i][:words_num[i]] for i in range(samples_num)]
+
+    return samples_token, new_y_pred
 
 
 def print_one_sample_and_result(one_X, one_y_pred, one_y_true=None):
@@ -532,7 +550,8 @@ def print_one_sample_and_result(one_X, one_y_pred, one_y_true=None):
 
 
 def process_input(X):
-    num_samples = X.shape[0]
+    # X: [['', '', ''], [], []]
+    num_samples = len(X)
     expected_num_samples = math.ceil(num_samples / elmo['batch_size']) * elmo['batch_size']
 
     new_X = []
@@ -563,4 +582,8 @@ if __name__ == '__main__':
     else:
         my_elmo_mode_test = ELMo_test()
         raw_str = "I am Barton Xu, he is Aspire Tan, and we live in Nanjing Jiangsu."
-        predict_one_sample(my_elmo_mode_test, raw_str)
+        x_tokens, y_pred = predict_one_sample(my_elmo_mode_test, raw_str)
+        print_one_sample_and_result(x_tokens[0], y_pred[0])
+
+        x_tokens, y_pred = predict_samples(my_elmo_mode_test, [raw_str])
+        print_one_sample_and_result(x_tokens[0], y_pred[0])
