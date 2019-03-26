@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebde4758-1e2d-4649-bbb8-e796416e3ae7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ner.py" beforeDir="false" afterPath="$PROJECT_DIR$/ner.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,19 +17,22 @@
       <file leaf-file-name="ner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="220" column="89" selection-start-line="220" selection-start-column="89" selection-end-line="220" selection-end-column="89" />
+            <state relative-caret-position="169">
+              <caret line="306" lean-forward="true" selection-start-line="306" selection-end-line="306" />
               <folding>
+                <element signature="e#1412#1532#0" />
                 <element signature="e#1057#1730#0" />
-                <element signature="e#1091#1537#0" />
-                <element signature="e#1571#1730#0" />
                 <element signature="e#2450#2667#0" />
                 <element signature="e#3866#4113#0" />
                 <element signature="e#4167#4704#0" />
-                <element signature="e#4749#5298#0" />
+                <element signature="e#6691#9827#0" />
                 <element signature="e#5461#5668#0" />
-                <element signature="e#5499#5573#0" />
-                <element signature="e#7872#7997#0" />
+                <element signature="e#7638#7871#0" />
+                <element signature="e#6402#6942#0" />
+                <element signature="e#8315#8374#0" />
+                <element signature="e#8416#8671#0" />
+                <element signature="e#7347#7566#0" />
+                <element signature="e#7621#9168#0" />
                 <element signature="e#8047#8187#0" />
                 <element signature="e#8238#8413#0" />
                 <element signature="e#8467#8657#0" />
@@ -37,20 +41,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="saving.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/engine/saving.py">
+      <file leaf-file-name="classification.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/sklearn/metrics/classification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7">
-              <caret line="387" column="14" selection-start-line="387" selection-start-column="4" selection-end-line="387" selection-end-column="14" />
+            <state relative-caret-position="400">
+              <caret line="671" column="16" selection-start-line="671" selection-start-column="11" selection-end-line="671" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/tensorflow/__init__.py">
+      <file leaf-file-name="training.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/engine/training.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="332">
+              <caret line="1281" column="26" selection-start-line="1281" selection-start-column="26" selection-end-line="1281" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -58,63 +62,23 @@
       <file leaf-file-name="callbacks.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/callbacks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="176" column="18" selection-start-line="176" selection-start-column="13" selection-end-line="176" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/tensorflow_hub/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="29" column="55" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="estimator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/tensorflow_hub/estimator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1690">
-              <caret line="116" column="41" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="callbacks.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/callbacks.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="392" column="56" selection-start-line="392" selection-start-column="39" selection-end-line="392" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input_layer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/engine/input_layer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="147" column="12" selection-start-line="147" selection-start-column="12" selection-end-line="147" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="training.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/engine/training.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="1334" column="44" selection-start-line="1334" selection-start-column="32" selection-end-line="1334" selection-end-column="44" />
+            <state relative-caret-position="1500">
+              <caret line="114" column="46" lean-forward="true" selection-start-line="114" selection-start-column="46" selection-end-line="114" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>verbose</find>
-      <find>have_trained_nb_epoch_file</find>
       <find>checkpoint</find>
       <find>export</find>
       <find>print</find>
@@ -122,7 +86,15 @@
       <find>USE_checkpoint_model</find>
       <find>modelCheckpoint_file</find>
       <find>USE_model_graph</find>
+      <find>categorical_accuracy</find>
+      <find>verbose</find>
       <find>save_format</find>
+      <find>32</find>
+      <find>96</find>
+      <find>my_sparse_categorical_accuracy</find>
+      <find>custom</find>
+      <find>4</find>
+      <find>have_trained_nb_epoch_file</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,13 +103,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/tes.py" />
         <option value="$PROJECT_DIR$/ner.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="82" />
-    <option name="y" value="2" />
+    <option name="x" value="103" />
+    <option name="y" value="3" />
     <option name="width" value="976" />
     <option name="height" value="773" />
   </component>
@@ -175,6 +149,31 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="tes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="ELMo_ner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.tes" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -219,7 +218,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32985386" />
       <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.2453027" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -234,6 +233,26 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.12857144" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="2" visible="true" weight="0.2453027" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Messages" order="3" />
+      <window_info anchor="bottom" id="Python Console" order="4" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -280,14 +299,12 @@
     <MESSAGE value="[mod]add log" />
     <option name="LAST_COMMIT_MESSAGE" value="[mod]add log" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/engine/training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="1334" column="44" selection-start-line="1334" selection-start-column="32" selection-end-line="1334" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/engine/input_layer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -316,13 +333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/callbacks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="176" column="18" selection-start-line="176" selection-start-column="13" selection-end-line="176" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/tensorflow/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -337,21 +347,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/losses.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="72" column="27" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/backend/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/backend/tensorflow_backend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="2193" column="4" selection-start-line="2193" selection-start-column="4" selection-end-line="2193" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/metrics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#25#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ner/Lib/site-packages/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="1334" column="44" selection-start-line="1334" selection-start-column="32" selection-end-line="1334" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/callbacks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="114" column="46" lean-forward="true" selection-start-line="114" selection-start-column="46" selection-end-line="114" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="1281" column="26" selection-start-line="1281" selection-start-column="26" selection-end-line="1281" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Continuum/anaconda3/envs/ELMo/Lib/site-packages/sklearn/metrics/classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="671" column="16" selection-start-line="671" selection-start-column="11" selection-end-line="671" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="220" column="89" selection-start-line="220" selection-start-column="89" selection-end-line="220" selection-end-column="89" />
+        <state relative-caret-position="169">
+          <caret line="306" lean-forward="true" selection-start-line="306" selection-end-line="306" />
           <folding>
+            <element signature="e#1412#1532#0" />
             <element signature="e#1057#1730#0" />
-            <element signature="e#1091#1537#0" />
-            <element signature="e#1571#1730#0" />
             <element signature="e#2450#2667#0" />
             <element signature="e#3866#4113#0" />
             <element signature="e#4167#4704#0" />
-            <element signature="e#4749#5298#0" />
+            <element signature="e#6691#9827#0" />
             <element signature="e#5461#5668#0" />
-            <element signature="e#5499#5573#0" />
-            <element signature="e#7872#7997#0" />
+            <element signature="e#7638#7871#0" />
+            <element signature="e#6402#6942#0" />
+            <element signature="e#8315#8374#0" />
+            <element signature="e#8416#8671#0" />
+            <element signature="e#7347#7566#0" />
+            <element signature="e#7621#9168#0" />
             <element signature="e#8047#8187#0" />
             <element signature="e#8238#8413#0" />
             <element signature="e#8467#8657#0" />
