@@ -5,7 +5,11 @@ import glob
 USE_google_drive = True
 USE_checkpoint_model = True
 
+MODE = "TEST"
+
 import os
+import numpy as np
+
 
 config = dict()
 
@@ -32,6 +36,9 @@ elmo["n_epochs"] = 20
 
 elmo['tags'] = ['O', 'I-eve', 'I-tim', 'I-org', 'I-gpe', 'B-tim', 'B-eve', 'I-per', 'B-gpe', 'B-per', 'B-geo', 'I-geo', 'I-nat', 'B-org', 'I-art', 'B-nat', 'B-art']
 elmo['n_tags'] = len(elmo['tags'])
+
+elmo['pad_wording'] = '__PAD__'
+elmo['prepared_X'] = np.array([elmo['pad_wording']] * elmo['maxlen'])
 
 # for google drive
 
@@ -128,6 +135,9 @@ class Data(object):
         self.y_tr = y_tr.reshape(y_tr.shape[0], y_tr.shape[1], 1)
         self.y_val = y_val.reshape(y_val.shape[0], y_val.shape[1], 1)
         self.y_te = y_te.reshape(y_te.shape[0], y_te.shape[1], 1)
+
+        self.X_te = self.X_te[:self.X_te.shape[0] // self.batch_size * self.batch_size]
+        self.y_te = self.y_te[:self.y_te.shape[0] // self.batch_size * self.batch_size]
 
         # train paths shuffle
         self.shuffle_train_data()
@@ -415,9 +425,131 @@ class ELMo(object):
             initial_epoch=self.have_trained_nb_epoch
             )
 
+    def predict_test_data(self):
+        model_path = config['elmo']['modelCheckpoint_file'] if USE_checkpoint_model else config['elmo']['model_h5']
+        if not os.path.exists(model_path):
+            print("elmo model not trained.")
+
+        test_data = [np.array(self.myData.X_te), np.array(self.myData.y_te)]
+        y_pred = np.argmax(np.asarray(self.elmo_net.predict(test_data[0], batch_size=elmo['batch_size'], verbose=1)), -1)  # (None, 50)
+        y_true = np.squeeze(test_data[1])  # (None, 50)
+        X_true = test_data[0]  # (None, 50)
+
+        index = 100
+        self.print_one_sample_and_result(X_true[index], y_true[index], y_pred[index])
+
+        return y_pred
+
+    def print_one_sample_and_result(self, one_X, one_y_pred, one_y_true=None):
+        tags = elmo['tags']
+        if one_y_true is not None:
+            print("{:15} {:5}: ({})".format("Word", "Pred", "True"))
+            print("=" * 30)
+            for w, pred, true in zip(one_X, one_y_pred, one_y_true):
+                if w != "PADword":
+                    print("{:15}:{:5} ({})".format(w, tags[pred], tags[true]))
+        else:
+            print("{:15} {:5}: ({})".format("Word", "Pred", "True"))
+            print("=" * 30)
+            for w, pred in zip(one_X, one_y_pred):
+                if w != "PADword":
+                    print("{:15}:{:5}".format(w, tags[pred]))
+
+    def predict_one_sample(self, X):
+        X = np.array(X)
+        y_pred = np.argmax(np.asarray(self.elmo_net.predict(X, batch_size=elmo['batch_size'], verbose=1)), -1)  # (1, 50)
+
+        self.print_one_sample_and_result(X[0], y_pred[0])
+
+        return y_pred
+
+    def predict_samples(self, X):
+        X = np.array(X)
+        y_pred = np.argmax(np.asarray(self.elmo_net.predict(X, batch_size=elmo['batch_size'], verbose=1)), -1)  # (None, 50)
+
+        index = random.randint(0, X.shape[0])
+        self.print_one_sample_and_result(X[index], y_pred[index])
+
+        return y_pred
+
     def plot_model(self):
         model = self.get_elmo()
         plot_model(model, to_file='model.png')
+
+
+class ELMo_test():
+    def __init__(self):
+        self.batch_size = elmo['batch_size']
+        model_path = config['elmo']['modelCheckpoint_file']
+        self.elmo_net = None
+        if os.path.exists(model_path):
+            global elmo_model
+            self.elmo_net = load_model(model_path, custom_objects={'elmo_model': elmo_model, 'tf': tf, 'elmo': elmo,
+                                                                   'my_sparse_categorical_accuracy': my_sparse_categorical_accuracy})
+            print("load keras model ELMo success")
+            self.elmo_net.summary()
+        else:
+            print("not exist model file")
+
+    def predict(self, X):
+        y_pred = np.argmax(np.asarray(self.elmo_net.predict(X, batch_size=elmo['batch_size'], verbose=1)),
+                           -1)  # (None, 50)
+        return y_pred
+
+import math
+import nltk
+from nltk.tokenize import word_tokenize
+nltk.download('punkt')
+
+
+def predict_one_sample(elmo_model_test, raw_x_str):
+    x_tokens = np.array(word_tokenize(raw_x_str))
+    x_tokens = np.array([x_tokens])
+    words_num = x_tokens.shape[0]
+
+    x_processd = process_input(x_tokens)
+    y_pred = elmo_model_test.predict(x_processd)
+
+    print_one_sample_and_result(x_processd[0][:words_num], y_pred[0][:words_num])
+
+    return y_pred[0][:words_num]
+
+
+def print_one_sample_and_result(one_X, one_y_pred, one_y_true=None):
+    tags = elmo['tags']
+    if one_y_true is not None:
+        print("{:15} {:5}: ({})".format("Word", "Pred", "True"))
+        print("=" * 30)
+        for w, pred, true in zip(one_X, one_y_pred, one_y_true):
+            if w != "PADword":
+                print("{:15}:{:5} ({})".format(w, tags[pred], tags[true]))
+    else:
+        print("{:15} {:5}: ({})".format("Word", "Pred", "True"))
+        print("=" * 30)
+        for w, pred in zip(one_X, one_y_pred):
+            if w != "PADword":
+                print("{:15}:{:5}".format(w, tags[pred]))
+
+
+def process_input(X):
+    num_samples = X.shape[0]
+    expected_num_samples = math.ceil(num_samples / elmo['batch_size']) * elmo['batch_size']
+
+    new_X = []
+    for i in range(expected_num_samples):
+        if i < num_samples:
+            seq = X[i]
+            new_seq = []
+            for j in range(elmo['maxlen']):
+                try:
+                    new_seq.append(seq[j])
+                except:
+                    new_seq.append(elmo['pad_wording'])
+            new_X.append(np.array(new_seq))
+        else:
+            new_X.append(elmo['prepared_X'])
+    new_X = np.array(new_X)
+    return new_X
 
 
 if __name__ == '__main__':
@@ -425,5 +557,10 @@ if __name__ == '__main__':
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
-    my_elmo_model = ELMo()
-    my_elmo_model.train_elmo_generator()
+    if MODE == "TRAIN":
+        my_elmo_model = ELMo()
+        my_elmo_model.train_elmo_generator()
+    else:
+        my_elmo_mode_test = ELMo_test()
+        raw_str = "I am Barton Xu, he is Aspire Tan, and we live in Nanjing Jiangsu."
+        predict_one_sample(my_elmo_mode_test, raw_str)

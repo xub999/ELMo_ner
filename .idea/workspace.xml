@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebde4758-1e2d-4649-bbb8-e796416e3ae7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ner.py" beforeDir="false" afterPath="$PROJECT_DIR$/ner.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,14 +16,16 @@
       <file leaf-file-name="ner.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="306" lean-forward="true" selection-start-line="306" selection-end-line="306" />
+            <state relative-caret-position="381">
+              <caret line="552" lean-forward="true" selection-start-line="552" selection-end-line="552" />
               <folding>
                 <element signature="e#1412#1532#0" />
                 <element signature="e#1057#1730#0" />
+                <element signature="e#2094#5727#0" />
                 <element signature="e#2450#2667#0" />
                 <element signature="e#3866#4113#0" />
                 <element signature="e#4167#4704#0" />
+                <element signature="e#5909#6072#0" />
                 <element signature="e#6691#9827#0" />
                 <element signature="e#5461#5668#0" />
                 <element signature="e#7638#7871#0" />
@@ -33,9 +34,21 @@
                 <element signature="e#8416#8671#0" />
                 <element signature="e#7347#7566#0" />
                 <element signature="e#7621#9168#0" />
+                <element signature="e#7872#7997#0" />
                 <element signature="e#8047#8187#0" />
                 <element signature="e#8238#8413#0" />
                 <element signature="e#8467#8657#0" />
+                <element signature="e#10034#10936#0" />
+                <element signature="e#12237#13546#0" />
+                <element signature="e#16648#17295#0" />
+                <element signature="e#17348#18012#0" />
+                <element signature="e#17610#17877#0" />
+                <element signature="e#18012#18229#0" />
+                <element signature="e#18282#18558#0" />
+                <element signature="e#12202#12272#0" />
+                <element signature="e#19015#19552#0" />
+                <element signature="e#19902#20447#0" />
+                <element signature="e#19003#19607#0" />
               </folding>
             </state>
           </provider>
@@ -95,6 +108,7 @@
       <find>custom</find>
       <find>4</find>
       <find>have_trained_nb_epoch_file</find>
+      <find>output</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -219,7 +233,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32985386" />
-      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.2453027" />
+      <window_info anchor="bottom" id="Version Control" weight="0.2453027" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" />
@@ -422,14 +436,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="306" lean-forward="true" selection-start-line="306" selection-end-line="306" />
+        <state relative-caret-position="381">
+          <caret line="552" lean-forward="true" selection-start-line="552" selection-end-line="552" />
           <folding>
             <element signature="e#1412#1532#0" />
             <element signature="e#1057#1730#0" />
+            <element signature="e#2094#5727#0" />
             <element signature="e#2450#2667#0" />
             <element signature="e#3866#4113#0" />
             <element signature="e#4167#4704#0" />
+            <element signature="e#5909#6072#0" />
             <element signature="e#6691#9827#0" />
             <element signature="e#5461#5668#0" />
             <element signature="e#7638#7871#0" />
@@ -438,9 +454,21 @@
             <element signature="e#8416#8671#0" />
             <element signature="e#7347#7566#0" />
             <element signature="e#7621#9168#0" />
+            <element signature="e#7872#7997#0" />
             <element signature="e#8047#8187#0" />
             <element signature="e#8238#8413#0" />
             <element signature="e#8467#8657#0" />
+            <element signature="e#10034#10936#0" />
+            <element signature="e#12237#13546#0" />
+            <element signature="e#16648#17295#0" />
+            <element signature="e#17348#18012#0" />
+            <element signature="e#17610#17877#0" />
+            <element signature="e#18012#18229#0" />
+            <element signature="e#18282#18558#0" />
+            <element signature="e#12202#12272#0" />
+            <element signature="e#19015#19552#0" />
+            <element signature="e#19902#20447#0" />
+            <element signature="e#19003#19607#0" />
           </folding>
         </state>
       </provider>
